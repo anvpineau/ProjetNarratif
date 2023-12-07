@@ -2,12 +2,13 @@
 {
     internal class Bedroom : Room
     {
+        internal static bool sacVide;
         internal override string CreateDescription() =>
-@"Tu es dans ta chambre à dormir.
-La [porte] qui mène au salon est devant toi.
-Ta [toilette] privée est à ta gauche.
-Dans ton armoire, tu aperçois le [grenier]
-";
+        @"Tu es dans ta chambre à dormir.
+        La [porte] qui mène au salon est devant toi.
+        Ta [toilette] privée est à ta gauche.
+        Dans ton armoire, tu aperçois le [grenier]
+        Ton [sac] est sur ton lit.";
 
         internal override void  ReceiveChoice(string choice)
         {
@@ -25,12 +26,16 @@ Dans ton armoire, tu aperçois le [grenier]
                     else
                     {
                         Console.WriteLine("Tu ouvres la porte avec ta clé et tu sors de ta chambre.");
-                        Game.Finish();
+                        Game.Transition<Salon>();
                     }
                     break;
                 case "grenier":
                     Console.WriteLine("Tu montes dans le grenier.");
                     Game.Transition<AtticRoom>();
+                    break;
+                case "sac":
+                    Console.WriteLine("Tu prends ton sac. Il est vide...");
+                    sacVide = true;
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");

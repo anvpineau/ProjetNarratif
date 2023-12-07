@@ -5,10 +5,10 @@
         internal static bool isKeyCollected;
 
         internal override string CreateDescription() =>
-@"Dans le grenier, il y fait noir et froid.
-Un coffre est verrouillé avec un code [????].
-Tu peux revenir dans ta [chambre].
-";
+        @"Dans le grenier, il y fait noir et froid.
+        Un coffre est verrouillé avec un code [????].
+        Tu peux revenir dans ta [chambre].
+        ";
 
         internal override void ReceiveChoice(string choice)
         {
