@@ -8,7 +8,8 @@
         La [porte] qui mène au salon est devant toi.
         Ta [toilette] privée est à ta gauche.
         Dans ton armoire, tu aperçois le [grenier]
-        Ton [sac] est sur ton lit.";
+        Ton [sac] est sur ton lit.
+        Pour aller dans la salle de la tâche E, entrer [1].";
 
         internal override void  ReceiveChoice(string choice)
         {
@@ -36,6 +37,9 @@
                 case "sac":
                     Console.WriteLine("Tu prends ton sac. Il est vide...");
                     sacVide = true;
+                    break;
+                case "1":
+                    Game.Transition<TacheE>();
                     break;
                 default:
                     Console.WriteLine("Commande invalide.");

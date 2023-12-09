@@ -8,6 +8,7 @@ game.Add(new AtticRoom());
 game.Add(new Salon());
 game.Add(new Cuisine());
 game.Add(new Bureau());
+game.Add(new TacheE());
 
 while (!game.IsGameOver())
 {
